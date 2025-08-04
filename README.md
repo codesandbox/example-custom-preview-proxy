@@ -1,6 +1,10 @@
-# Custom proxy for *.csb.app domains
+# Custom reverse proxy for *.csb.app domains
 
 This repo uses nginx server to route all `*.test.com` requests to `*.csb.app`. This is used in this repo to show a custom 502 page when the csb.app preview urls return 502.
+
+## Notes
+- The proxy adds `csb_is_trusted=true` to trust the request coming in from the domain
+- If all routes are requested via this proxy, there could some added latency as the request has to hop through one extra layer
 
 ## Running locally
 
